@@ -1,6 +1,21 @@
-﻿@{
+﻿@model BreadListViewModel
+
+@{
     ViewData["Title"] = "Bröd";
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Bröd.</p>
+@foreach (var bread in Model.Bread)
+{
+    <div class="card-body">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="@bread.ImageUrl" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@bread.Name</h5>
+                <p class="card-text">@bread.ShortDescription.</p>
+                <h6>@bread.Price</h6>
+                <a href="#" class="btn btn-primary">Lägg i varukorgen</a>
+            </div>
+        </div>
+    </div>
+}
