@@ -24,8 +24,11 @@ namespace Bageriet.Controllers
 
         public ViewResult Bread()
         {
-            BreadListViewModel breadListViewModel = new BreadListViewModel();
-            breadListViewModel.Bread = _breadRepository.AllBread;
+            BreadListViewModel breadListViewModel = new BreadListViewModel
+            {
+                Bread = _breadRepository.AllBread,
+                Products = _productRepository.AllProducts
+            };
 
             return View(breadListViewModel);
         }

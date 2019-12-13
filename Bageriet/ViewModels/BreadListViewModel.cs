@@ -9,6 +9,7 @@ namespace Bageriet.ViewModels
     public class BreadListViewModel
     {
         public IEnumerable<Bread> Bread { get; set; }
+        public IEnumerable<Product> Products { get; set; }
     }
 }
 
