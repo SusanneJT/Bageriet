@@ -7,7 +7,6 @@ namespace Bageriet.Models
 {
     public class MockBreadRepository : IBreadRepository
     {
-        private readonly IProductRepository _productRepository = new MockProductRepository();
 
         public IEnumerable<Bread> AllBread =>
             new List<Bread>

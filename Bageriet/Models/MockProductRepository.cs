@@ -8,9 +8,11 @@ namespace Bageriet.Models
     public class MockProductRepository: IProductRepository
     {
         public IEnumerable<Product> AllProducts =>
-            new List<Product>
+
+
+        new List<Product>
             {
-                        new Product{ProductId=1, ProductName="Bread", Description="Nybakat bröd som passar lika bra till frukost som till lunch"},
+                        new Product{ProductId=1, ProductName="Bröd", Description="Nybakat bröd som passar lika bra till frukost som till lunch"},
             };
     }
 }
