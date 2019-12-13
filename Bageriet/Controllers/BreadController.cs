@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Bageriet.Models;
+using Bageriet.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -11,15 +13,22 @@ namespace Bageriet.Controllers
 {
     public class BreadController : Controller
     {
-        private readonly ILogger<BreadController> _logger;
-        public BreadController(ILogger<BreadController> logger)
+        private readonly IBreadRepository _breadRepository;
+        private readonly IProductRepository _productRepository;
+
+        public BreadController(IBreadRepository breadRepository, IProductRepository productRepository)
         {
-            _logger = logger;
+            _breadRepository = breadRepository;
+            _productRepository = productRepository;
         }
-        // GET: /<controller>/
-        public IActionResult Bread()
+
+        public ViewResult Bread()
         {
-            return View();
+            BreadListViewModel breadListViewModel = new BreadListViewModel();
+            breadListViewModel.Bread = _breadRepository.AllBread;
+
+            return View(breadListViewModel);
         }
+
     }
 }
