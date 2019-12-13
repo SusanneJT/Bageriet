@@ -7,6 +7,8 @@ namespace Bageriet.Models
 {
     public class Bread
     {
+        //Automatic properties for the bread class
+
         public int BreadId { get; set; }
         public string Name { get; set; }
         public string ShortDescription { get; set; }

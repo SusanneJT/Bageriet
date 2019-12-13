@@ -11,12 +11,13 @@ namespace Bageriet.Controllers
 {
     public class HomeController : Controller
     {
-
+        //Returns view for the Index page
         public IActionResult Index()
         {
             return View();
         }
 
+        //Returns view for the Contact page
         public IActionResult Contact()
         {
             return View();

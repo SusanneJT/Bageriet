@@ -11,8 +11,8 @@ namespace Bageriet.Models
 
 
         new List<Product>
-            {
-                        new Product{ProductId=1, ProductName="Bröd", Description="Nybakat bröd som passar lika bra till frukost som till lunch"},
-            };
+        {
+            new Product{ProductId=1, ProductName="Bröd", Description="Nybakat bröd som passar lika bra till frukost som till lunch"},
+        };
     }
 }
