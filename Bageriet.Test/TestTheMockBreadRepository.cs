@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Bageriet.Test
 {
-    public class TestBreadView
+    public class TestMockBreadRepository
     {
         [Fact]
         public void TestsTheMockBreadRepository()
@@ -20,7 +20,6 @@ namespace Bageriet.Test
 
             //Assert
             Assert.NotEqual(0, breadCount);
-
 
         }
     }
