@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bageriet.Models
 {
-    public class AppDbContext : DbContext, IDbContext
+    public class AppDbContext : DbContext
     {
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
