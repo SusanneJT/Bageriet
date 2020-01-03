@@ -1,0 +1,63 @@
+﻿@model Rating
+
+<div class="container">
+    <div class="row pt-3">
+        <div class="col-lg-8">
+
+            <form asp-action="RateBread" asp-route-Id="@ViewBag.BreadId" method="post" class="form-horizontal" role="form">
+                <h4>Lämna ditt omdöme</h4>
+
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="AuthorName" class="col-md-2 control-label"></label>
+                    <div class="col-md-5">
+                        <input asp-for="AuthorName" class="form-control" />
+                        <span asp-validation-for="AuthorName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email" class="col-md-2 control-label"></label>
+                    <div class="col-md-5">
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Grade" class="col-md-2 control-label"></label>
+                    <div class="col-md-5">
+                        <span class="star-rating">
+                            <input asp-for="Grade" type="radio" name="Grade" value="1"> 1
+                            <input asp-for="Grade" type="radio" name="Grade" value="2"> 2
+                            <input asp-for="Grade" type="radio" name="Grade" value="3"> 3
+                            <input asp-for="Grade" type="radio" name="Grade" value="4"> 4
+                            <input asp-for="Grade" type="radio" name="Grade" value="5"> 5<br>
+                            <span asp-validation-for="Grade" class="text-danger"></span>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Comment" class="col-md-2 control-label"></label>
+                    <div class="col-md-5">
+                        <textarea asp-for="Comment" class="form-control" rows="4" cols="50"></textarea>
+                        <span asp-validation-for="Comment" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-5">
+                        <input type="submit" class="btn btn-primary" value="Lämna betyg" />
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-lg-4">
+            <img class="img-responsive img-thumbnail" alt="" src="@ViewBag.BreadImg">
+        </div>
+    </div>
+</div>

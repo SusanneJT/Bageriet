@@ -15,6 +15,7 @@ namespace Bageriet.Models
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Bread> Bread { get; set; }
+        public DbSet<Rating> Rating { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

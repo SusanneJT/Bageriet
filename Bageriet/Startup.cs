@@ -30,6 +30,8 @@ namespace Bageriet
 
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IBreadRepository, BreadRepository>();
+
+            services.AddScoped<IRatingRepository, RatingRepository>();
             services.AddControllersWithViews();
         }
 

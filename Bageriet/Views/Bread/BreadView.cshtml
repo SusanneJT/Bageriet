@@ -1,0 +1,35 @@
+﻿@model BreadDetailsView
+
+<div class="container">
+    <div class="row pt-3">
+        <div class="col-lg-5 pt-3">
+            <h2>@Model.Bread.Name</h2>.
+            <h5 class="pull-right">@Model.Bread.Price kr</h5>
+            <h4>@Model.Bread.ShortDescription</h4>
+            <p>@Model.Bread.LongDescription</p>
+
+        </div>
+        <div class="col-lg-4">
+            <img class="img-responsive img-thumbnail" alt="@Model.Bread.Name" src="@Model.Bread.ImageUrl">
+        </div>
+        <div class="col-lg-3">
+            <div>
+                <hr />
+                <h5>@Model.Bread.Name har fått:</h5>
+                <p>@(Math.Round(Model.AvarageGrade, 1)) i medelbetyg (baserat på @Model.Ratings.Count() omdömen).</p>
+                <hr />
+                @foreach (var rating in Model.Ratings)
+                {
+                    <p><strong>@rating.AuthorName:</strong> @rating.Comment </p>
+                    <h6>Betyg: @rating.Grade/5</h6>
+                    <hr />
+                }
+                
+                <a class="btn btn-primary" asp-controller="Rating" asp-action="RateBread" asp-route-Id="@Model.Bread.BreadId">Ge betyg</a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+

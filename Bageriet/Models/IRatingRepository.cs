@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 
 namespace Bageriet.Models
 {
-    public interface IBreadRepository
+    public interface IRatingRepository
     {
-        IEnumerable<Bread> AllBread { get; }
-        Bread GetBreadById(int breadId);
+        void CreateRating(Rating rating);
+        IEnumerable<Rating> GetAllRatings(int breadId); 
+
+
     }
 }
