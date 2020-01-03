@@ -17,5 +17,10 @@ namespace Bageriet.Models
                 new Bread {BreadId = 4, Name="Baguette", Price=9.50M, ShortDescription="Lorem ipsum dolor sit amet, consectem arcu, interdum vel accumsan vitae, lobortis.", ImageUrl="/Images/bread4.jpg"}
             };
 
+        public Bread GetBreadById(int breadId)
+        {
+            return AllBread.FirstOrDefault(b => b.BreadId == breadId);
+        }
+
     }
 }

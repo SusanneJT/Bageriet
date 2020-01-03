@@ -13,7 +13,9 @@
         <div class="card" style="width: 16rem;">
             <img class="card-img-top" src="@bread.ImageUrl" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">@bread.Name</h5>
+                <h5>
+                    <a asp-controller="Bread" asp-action="BreadView" asp-route-id="@bread.BreadId">@bread.Name</a>
+                </h5>
                 <p class="card-text">@bread.ShortDescription.</p>
                 <h6>@bread.Price kr</h6>
             </div>

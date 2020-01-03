@@ -18,7 +18,7 @@ namespace Bageriet.Test
             var controller = new BreadController(breadRepository, productRepository);
 
             // Act 
-            var result = controller.Bread();
+            var result = controller.BreadList();
  
             // Assert
             Assert.NotNull(result);
