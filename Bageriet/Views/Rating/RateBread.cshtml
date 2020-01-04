@@ -1,4 +1,7 @@
 ﻿@model Rating
+@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<IdentityUser> UserManager
 
 <div class="container">
     <div class="row pt-3">
@@ -20,7 +23,7 @@
                 <div class="form-group">
                     <label asp-for="Email" class="col-md-2 control-label"></label>
                     <div class="col-md-5">
-                        <input asp-for="Email" class="form-control" />
+                        <input asp-for="Email" class="form-control" value=" @UserManager.GetUserName(User)" />
                         <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                 </div>
@@ -50,7 +53,7 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-5">
-                        <input type="submit" class="btn btn-primary" value="Lämna betyg" />
+                        <input type="submit" class="btn btn-primary" style="background:rgb(67,39,17) linear-gradient(0deg, rgba(67,39,17,1) 0%, rgba(51,41,41,1) 81%);" value="Lämna betyg" />
                     </div>
                 </div>
 

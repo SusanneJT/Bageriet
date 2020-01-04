@@ -4,6 +4,7 @@
 }
 
 <h1 class="pt-3">@Model.Products.First().ProductName</h1>
+<hr />
 <p class="pt-3">@Model.Products.First().Description</p>
 
 <div class="pt-3 row flex-row ">
@@ -14,7 +15,7 @@
             <img class="card-img-top" src="@bread.ImageUrl" alt="Card image cap">
             <div class="card-body">
                 <h5>
-                    <a asp-controller="Bread" asp-action="BreadView" asp-route-id="@bread.BreadId">@bread.Name</a>
+                    <a style="color: #432711;"asp-controller="Bread" asp-action="BreadView" asp-route-id="@bread.BreadId">@bread.Name</a>
                 </h5>
                 <p class="card-text">@bread.ShortDescription.</p>
                 <h6>@bread.Price kr</h6>

@@ -8,7 +8,7 @@ namespace Bageriet.Models
     public interface IRatingRepository
     {
         void CreateRating(Rating rating);
-        IEnumerable<Rating> GetAllRatings(int breadId); 
+        IEnumerable<Rating> GetAllRatings(int breadId);
 
 
     }
