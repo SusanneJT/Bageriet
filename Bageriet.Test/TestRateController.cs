@@ -19,14 +19,11 @@ namespace Bageriet.Test
             IBreadRepository breadRepository = new MockBreadRepository();
             IRatingRepository ratingRepository = new MockRatingRepository();
             var controller = new RatingController(ratingRepository, breadRepository);
-
             Rating testRating = new Rating();
             
-
             // Act 
             var result = controller.RateBread(testRating, 1);
 
- 
             // Assert
             Assert.IsType<RedirectToActionResult>(result);
         }
