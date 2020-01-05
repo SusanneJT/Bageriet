@@ -18,9 +18,15 @@ namespace Bageriet.Test
             
             //Act
             IEnumerable<Rating> mockRatings = ratingRepository.GetAllRatings(1);
+            //GetAllRatings fetches all the ratings for bread where breadId == 1
+            int countRatings = 0;
+            foreach (var rating in mockRatings)
+            {
+                countRatings++;
+            }
 
             //Assert
-            Assert.NotNull(mockRatings);
+            Assert.NotEqual(0, countRatings);
 
         }
     }
