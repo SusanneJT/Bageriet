@@ -8,25 +8,27 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bageriet.Test
 {
-    public class TestBreadView
+    public class TestRateController
     {
 
         [Fact]
-        public void TestsTheBreadView()
+        public void TestRateBread()
         {
 
             //Arrange
             IBreadRepository breadRepository = new MockBreadRepository();
-            IProductRepository productRepository = new MockProductRepository();
             IRatingRepository ratingRepository = new MockRatingRepository();
-            var controller = new BreadController(breadRepository, productRepository, ratingRepository);
+            var controller = new RatingController(ratingRepository, breadRepository);
+
+            Rating testRating = new Rating();
+            
 
             // Act 
-            var result = controller.BreadList();
+            var result = controller.RateBread(testRating, 1);
+
  
             // Assert
-            Assert.NotNull(result);
-            Assert.IsType<ViewResult>(result);
+            Assert.IsType<RedirectToActionResult>(result);
         }
     }
 }

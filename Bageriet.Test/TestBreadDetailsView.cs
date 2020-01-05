@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Bageriet.Test
 {
-    public class TestBreadView
+    public class TestBreadDetailsView
     {
 
         [Fact]
-        public void TestsTheBreadView()
+        public void TestRatingsOnBreadInDetailsView()
         {
 
             //Arrange
@@ -22,10 +22,9 @@ namespace Bageriet.Test
             var controller = new BreadController(breadRepository, productRepository, ratingRepository);
 
             // Act 
-            var result = controller.BreadList();
- 
+            var result = controller.BreadView(1);
+     
             // Assert
-            Assert.NotNull(result);
             Assert.IsType<ViewResult>(result);
         }
     }
