@@ -47,6 +47,8 @@ namespace Bageriet.Controllers
                 _ratingRepository.CreateRating(rating);
                 return RedirectToAction("RatingComplete");
             }
+            ViewBag.BreadId = id;
+            ViewBag.BreadImg = bread.ImageUrl;
             return View(rating);
         }
 
